@@ -98,3 +98,29 @@ document.getElementById("diminuir-blindagem").addEventListener("click", diminuir
 document.getElementById("diminuir-nucleos").addEventListener("click", diminuirnucleos);
 document.getElementById("diminuir-pernas").addEventListener("click", diminuirpernas);
 document.getElementById("diminuir-foguetes").addEventListener("click", diminuirfoguetes);
+
+//mudar imagem
+
+var imagens = ["./img/robotron-azul.png", "./img/robotron-vermelho.png", "./img/robotron-rosa.png", "./img/robotron-amarelo.png", "./img/robotron-branco.png", "./img/robotron-preto.png"];
+var contador = 0;
+
+function exibirImagem() {
+    var imagem = document.getElementById("imagem");
+    imagem.src = imagens[contador];
+}
+
+function next() {
+    contador++;
+    if (contador >= imagens.length) {
+        contador = 0; 
+    }
+    exibirImagem();
+}
+
+function previous() {
+    contador--;
+    if (contador < 0) {
+        contador = imagens.length - 1; 
+    }
+    exibirImagem();
+}
